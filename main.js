@@ -18,14 +18,13 @@ function Calcola(){
     var SingleP = fisso;
     let element = document.createElement("P");
     if(Ages<18){
-        SingleP= fisso - (fisso/100*20);
+        SingleP= fisso - (fisso/100*20).toFixed(2);
         element.innerHTML = `${Name} <span>${fisso}$</span> ${SingleP}$`;
     }else if(Ages>65){
-        SingleP= fisso - (fisso/100*40);
-        element.innerHTML = `${Name} <span>${fisso}</span> ${SingleP}$`;
+        SingleP= fisso - (fisso/100*40).toFixed(2);
+        element.innerHTML = `${Name} <span>${fisso}$</span> ${SingleP}$`;
     }else{element.innerHTML = `${Name} ${SingleP}$`;}
     document.getElementById('Age').value=null;
     document.getElementById('Name').value=null;
     document.getElementById("passeggeri").append(element);
-
 }
