@@ -1,0 +1,60 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+.ms-row{
+    display: flex;
+    vertical-align: middle;
+}
+.data{
+    max-width: 550px;
+    
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    padding: 30px;
+    margin-right: 200px;
+}
+h3{
+    flex-grow: 1;
+}
+.text{
+    margin-bottom: 10px;
+}
+#add{
+    margin-bottom: 30px;
+}
+p{
+    font-size: 2rem;
+}
+.journey{
+    margin-bottom: 20px;
+}
+span{
+    text-decoration: line-through;
+    opacity: 0.5;
+    text-decoration-color: rgba(0, 0, 0, 0.5);
+}
+.card{
+    max-width: 1100px;
+    margin: auto;
+    padding-top: 100px;
+    
+}
+h1{
+    text-align: center;
+    padding-top: 100px;
+    font-size: 3rem;
+}
+
+@media screen and (max-width:792px) {
+    .card{
+        display: block;
+        text-align: center;
+    }
+    .data{
+        margin: auto;
+    }
+    
+}
