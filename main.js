@@ -13,6 +13,7 @@ function GetDistance() {
 var test=0.00;
 sessionStorage.setItem('tot',test)
 function Calcola(){
+    document.getElementById('Distance').readOnly=true;
     var Ages=GetAge();
     var Km=GetDistance();
     var Name=GetName();
