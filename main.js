@@ -38,6 +38,8 @@ function Calcola(){
             sessionStorage.setItem('tot',sum);
 }
 function GetTotal(){
+    document.getElementById('Name').readOnly=true;
+    document.getElementById('Age').readOnly=true;
     var tot=(parseFloat(sessionStorage.getItem('tot')));
     tot=tot.toFixed(2);
     document.getElementById('total').innerHTML=`${tot}$`;
