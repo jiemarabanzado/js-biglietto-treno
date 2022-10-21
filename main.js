@@ -13,37 +13,43 @@ function GetDistance() {
 var test=0.00;
 sessionStorage.setItem('tot',test)
 function Calcola(){
-    document.getElementById('Distance').readOnly=true;
     var Ages=GetAge();
-    var Km=Number(GetDistance());
+    var Km=GetDistance();
     var Name=(GetName());
-    const fisso= (Km*0.21);
-    var SingleP = fisso;
-    let element = document.createElement("P");
-    if(isNaN(Ages)){
-        alert('inserisci un numero')
+    if(isNaN(Km)){
+        alert('km: inserisci un numero');
         return;
-    }
-    else
-        {
-            Ages=Number(Ages);
-            if(Ages<0){
-            alert('inserisci valore maggiore di zero')
-            return;
+    }else{
+            Km=Number(Km);
+            const fisso= (Km*0.21);
+            var SingleP = fisso;
+            document.getElementById('Distance').readOnly=true;
+            let element = document.createElement("P");
+            if(isNaN(Ages)){
+                alert('Età: inserisci un numero')
+                return;
             }
-            else if(Ages<18){
-                SingleP= fisso - (fisso/100*20).toFixed(2);
-                element.innerHTML = `${Name} <span>${fisso}$</span> ${SingleP}$`;
-                }else if(Ages>65){
-                SingleP= fisso - (fisso/100*40).toFixed(2);
-                element.innerHTML = `${Name} <span>${fisso}$</span> ${SingleP}$`;
-                }else{element.innerHTML = `${Name} ${SingleP}$`;}
-                document.getElementById('Age').value=null;
-                document.getElementById('Name').value=null;
-                document.getElementById("passeggeri").append(element);
-                var sum=(parseFloat(sessionStorage.getItem('tot'))+SingleP);
-                sessionStorage.setItem('tot',sum);
-            }
+            else
+                {
+                    Ages=Number(Ages);
+                    if(Ages<0){
+                    alert('Età:inserisci valore maggiore di zero')
+                    return;
+                    }
+                    else if(Ages<18){
+                            SingleP= fisso - (fisso/100*20).toFixed(2);
+                            element.innerHTML = `${Name} <span>${fisso}$</span> ${SingleP}$`;
+                            }else if(Ages>65){
+                            SingleP= fisso - (fisso/100*40).toFixed(2);
+                            element.innerHTML = `${Name} <span>${fisso}$</span> ${SingleP}$`;
+                            }else{element.innerHTML = `${Name} ${SingleP}$`;}
+                            document.getElementById('Age').value=null;
+                            document.getElementById('Name').value=null;
+                            document.getElementById("passeggeri").append(element);
+                            var sum=(parseFloat(sessionStorage.getItem('tot'))+SingleP);
+                            sessionStorage.setItem('tot',sum);
+                }
+        }
 }
 function GetTotal(){
     document.getElementById('Name').readOnly=true;
