@@ -11,6 +11,7 @@ function GetDistance() {
     return Km;
 }
 var test=0.00;
+let tot=0;
 sessionStorage.setItem('tot',test)
 function Calcola(){
     var Ages=GetAge();
@@ -45,16 +46,14 @@ function Calcola(){
                             }else{element.innerHTML = `${Name} ${SingleP}$`;}
                             document.getElementById('Age').value=null;
                             document.getElementById('Name').value=null;
+                            tot+=SingleP;
                             document.getElementById("passeggeri").append(element);
-                            var sum=(parseFloat(sessionStorage.getItem('tot'))+SingleP);
-                            sessionStorage.setItem('tot',sum);
                 }
         }
 }
 function GetTotal(){
     document.getElementById('Name').readOnly=true;
     document.getElementById('Age').readOnly=true;
-    var tot=(parseFloat(sessionStorage.getItem('tot')));
     tot=tot.toFixed(2);
     document.getElementById('total').innerHTML=`${tot}$`;
     var element = document.getElementById("action");
